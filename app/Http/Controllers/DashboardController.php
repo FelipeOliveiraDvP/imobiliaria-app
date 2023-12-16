@@ -8,6 +8,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return redirect('admin.dashboard.index');
+        return view('dashboard.index');
     }
 }

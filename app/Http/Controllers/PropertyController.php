@@ -8,11 +8,21 @@ class PropertyController extends Controller
 {
     public function index()
     {
-        return redirect('public.property.index');
+        return view('property.index');
     }
 
-    public function propetyDetail()
+    public function create()
     {
-        return redirect('public.property.detail');
+        return view('property.create');
+    }
+
+    public function search()
+    {
+        return view('property.search');
+    }
+
+    public function detail()
+    {
+        return view('property.detail');
     }
 }

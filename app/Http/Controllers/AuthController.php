@@ -8,21 +8,26 @@ class AuthController extends Controller
 {
     public function login()
     {
-        return redirect('public.auth.login');
+        return view('auth.login');
     }
 
     public function register()
     {
-        return redirect('public.auth.register');
+        return view('auth.register');
     }
 
     public function forgot()
     {
-        return redirect('public.auth.forgot');
+        return view('auth.forgot');
     }
 
     public function reset()
     {
-        return redirect('public.auth.reset');
+        return view('auth.reset');
+    }
+
+    public function logout()
+    {
+        return view('auth.login');
     }
 }
