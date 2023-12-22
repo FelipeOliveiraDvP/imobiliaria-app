@@ -22,15 +22,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::group(['middleware' => 'guest'], function () {
-	Route::get('/', [HomeController::class, 'index'])->name('home');
-	Route::get('/pesquisar', [PropertyController::class, 'search'])->name('search');
-	Route::get('/pesquisar/{property_id}', [PropertyController::class, 'detail'])->name('search.detail');
-	Route::get('/login', [AuthController::class, 'login'])->name('login');
-	Route::get('/cadastre-se', [AuthController::class, 'register'])->name('register');
-	Route::get('/esqueci-minha-senha', [AuthController::class, 'forgot'])->name('forgot');
-	Route::get('/alterar-senha', [AuthController::class, 'reset'])->name('reset');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/pesquisar', [PropertyController::class, 'search'])->name('search');
+Route::get('/pesquisar/{property_id}', [PropertyController::class, 'detail'])->name('search.detail');
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/auth', [AuthController::class, 'loginSubmit'])->name('login.submit');
+Route::get('/cadastre-se', [AuthController::class, 'register'])->name('register');
+Route::get('/esqueci-minha-senha', [AuthController::class, 'forgot'])->name('forgot');
+Route::get('/alterar-senha', [AuthController::class, 'reset'])->name('reset');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

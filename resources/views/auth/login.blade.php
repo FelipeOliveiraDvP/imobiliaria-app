@@ -11,19 +11,22 @@
                             <p class="mb-0">Informe seu e-mail e senha para acessar a sua conta</p>
                         </div>
                         <div class="card-body">
-                            <form role="form">
+                            <form role="form" action="{{ route('login.submit') }}" method="POST">
+                                @csrf
                                 <label>E-mail</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Informe seu e-mail"
-                                        aria-label="Informe seu e-mail" aria-describedby="email-addon">
+                                    <input type="email" name="email" class="form-control"
+                                        placeholder="Informe seu e-mail" aria-label="Informe seu e-mail"
+                                        aria-describedby="email-addon">
                                     @error('email')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <label>Senha</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Informe sua senha"
-                                        aria-label="Informe sua senha" aria-describedby="password-addon">
+                                    <input type="password" name="password" class="form-control"
+                                        placeholder="Informe sua senha" aria-label="Informe sua senha"
+                                        aria-describedby="password-addon">
                                     @error('password')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
@@ -35,7 +38,7 @@
                                 <a href="{{ route('forgot') }}" class="text-info">Esqueci
                                     minha senha</a>
                                 <div class="text-center">
-                                    <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Entrar</button>
+                                    <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Entrar</button>
                                 </div>
                             </form>
                         </div>
