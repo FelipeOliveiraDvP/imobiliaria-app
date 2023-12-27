@@ -1,0 +1,44 @@
+html,
+body,
+main.main-content {
+    height: 100vh;
+}
+
+main.main-content > .container-fluid,
+main.main-content > .container-fluid .row,
+main.main-content > .container-fluid div[class*="col"] {
+    height: 100%;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bg-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Sidebar */
+aside.sidenav {
+    background-color: #7048e8 !important;
+}
+aside.sidenav .navbar-brand,
+aside.sidenav .navbar-brand:hover,
+aside.sidenav .nav-item .nav-link {
+    color: #ffffff;
+}
+aside.sidenav .nav-item .nav-link.active,
+aside.sidenav .nav-item .nav-link:hover {
+    background-color: #e5dbff;
+    color: #7048e8 !important;
+    border-radius: 0.5rem;
+}
+/* Page */
+.page-header .title,
+.page-header .extra {
+    margin: 0;
+}
+.page-filters .form-group i {
+    color: #7048e8;
+}

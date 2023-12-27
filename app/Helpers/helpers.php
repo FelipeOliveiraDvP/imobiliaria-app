@@ -1,10 +1,14 @@
 <?php
-function page_title($slug)
+
+use Illuminate\Support\Facades\Request;
+
+function page_title()
 {
+    $slug = str_replace('-', ' ', Request::path());
     $routes = [
         'dashboard' => 'Dashboard',
         'usuarios' => 'Usuários',
-        'imobiliarias' => 'Imobiliária',
+        'imobiliarias' => 'Imobiliárias',
         'clientes' => 'Clientes',
         'imoveis' => 'Imóveis',
         'propostas' => 'Propostas',

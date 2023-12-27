@@ -36,30 +36,8 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    <link id="pagestyle" href="../assets/css/custom.css" rel="stylesheet" />
 
-    <style>
-        html,
-        body,
-        main.main-content {
-            height: 100vh;
-        }
-
-        main.main-content>.container-fluid,
-        main.main-content>.container-fluid .row,
-        main.main-content>.container-fluid div[class*="col"] {
-            height: 100%;
-        }
-
-        .row {
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        .bg-image {
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">

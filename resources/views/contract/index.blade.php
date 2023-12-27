@@ -1,30 +1,50 @@
 @extends('layouts.private.base')
 
 @section('content')
-    <div class="filters">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="customer">Cliente</label>
-                    <input type="text" class="form-control" id="customer" placeholder="Nome do Cliente">
+    <div class="d-flex justify-content-between p-3 bg-white rounded align-items-center page-header">
+        <h1 class="h5 title">{{ page_title() }}</h1>
+        <a class="btn btn-primary extra" href="{{ route('contracts.create') }}">Novo Contrato</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start my-3 page-filters">
+        <div class="d-flex align-items-center flex-wrap gap-2">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Pesquisar por cliente" type="text">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="due_date" class="form-control-label">Data de vencimento</label>
-                    <input class="form-control" type="date" value="2018-11-23" id="due_date">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Pesquisar por data" type="date">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select class="form-control" id="status">
-                        <option value="0">Ativo</option>
-                        <option value="1">Inativo</option>
+            <div class="form-group">
+                <div class="input-group">
+                    <select class="form-control text-secondary" id="role">
+                        <option value="">Selecione o status</option>
+                        <option value="0">Pendente</option>
+                        <option value="1">Aprovada</option>
+                        <option value="2">Cancelada</option>
                     </select>
+                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <select class="form-control text-secondary" id="role">
+                        <option value="">Ordenar por</option>
+                        <option value="0">Data - ASC</option>
+                        <option value="1">Data - DESC</option>
+                    </select>
+                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
                 </div>
             </div>
         </div>
+        <button type="submit" class="btn btn-outline-primary mb-0">
+            <i class="fas fa-filter"></i> Filtrar
+        </button>
     </div>
 
     <div class="card">
@@ -68,6 +88,35 @@
                         </td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <ul class="pagination pagination-primary justify-content-end">
+                                <li class="page-item active">
+                                    <a class="page-link" href="javascript:;">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">6</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">7</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>

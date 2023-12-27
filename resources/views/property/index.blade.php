@@ -1,39 +1,59 @@
 @extends('layouts.private.base')
 
 @section('content')
-    <div class="filters">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="form-group">
-                    <label for="code">Código</label>
-                    <input type="text" class="form-control" id="code" placeholder="EX: 0000000">
+    <div class="d-flex justify-content-between p-3 bg-white rounded align-items-center page-header">
+        <h1 class="h5 title">{{ page_title() }}</h1>
+        <a class="btn btn-primary extra" href="{{ route('users.create') }}">Novo Imóvel</a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start my-3 page-filters">
+        <div class="d-flex align-items-center flex-wrap gap-2">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Pesquisar por código" type="text">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="form-group">
-                    <label for="address">Endereço</label>
-                    <input type="text" class="form-control" id="code" placeholder="EX: Rua ABC, 12">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Pesquisar por endereço" type="text">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="form-group">
-                    <label for="rented">Imóvel alugado</label>
-                    <select class="form-control" id="rented">
+            <div class="form-group">
+                <div class="input-group">
+                    <select class="form-control text-secondary" id="role">
+                        <option value="">Imóvel Alugado</option>
                         <option value="0">Sim</option>
                         <option value="1">Não</option>
                     </select>
+                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="form-group">
-                    <label for="status">Status</label>
-                    <select class="form-control" id="status">
+            <div class="form-group">
+                <div class="input-group">
+                    <select class="form-control text-secondary" id="role">
+                        <option value="">Selecione o status</option>
                         <option value="0">Ativo</option>
                         <option value="1">Inativo</option>
                     </select>
+                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <select class="form-control text-secondary" id="role">
+                        <option value="">Ordenar por</option>
+                        <option value="0">Nome - ASC</option>
+                        <option value="1">Nome - DESC</option>
+                    </select>
+                    <span class="input-group-text"><i class="fas fa-chevron-down"></i></span>
                 </div>
             </div>
         </div>
+        <button type="submit" class="btn btn-outline-primary mb-0">
+            <i class="fas fa-filter"></i> Filtrar
+        </button>
     </div>
 
     <div class="card">
@@ -83,6 +103,35 @@
                         </td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <ul class="pagination pagination-primary justify-content-end">
+                                <li class="page-item active">
+                                    <a class="page-link" href="javascript:;">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">6</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#link">7</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
